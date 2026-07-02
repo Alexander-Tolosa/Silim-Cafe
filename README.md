@@ -1,35 +1,36 @@
-# Silim Café Web Platform
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Project Meaning
-The **Silim Café Website Project** is a high-performance, single-page web platform designed to establish a modern digital presence for Silim Café. The primary goal is to capture the cafe’s distinct aesthetic—blending a minimalist, moody, monochromatic theme (blacks, whites, and greys) with its identity as a welcoming local coffee hub and study spot for students and coffee enthusiasts. 
+## Getting Started
 
-By bypassing heavy backend infrastructure, this platform prioritizes blazing-fast mobile performance, local SEO optimization, and immediate accessibility. It serves as a digital storefront bridging the gap between the physical cafe experience in Imus, Cavite, and online customer convenience.
+First, run the development server:
 
----
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-## Project Scope
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-### In-Scope (Core Deliverables)
-*   **Responsive Landing Page:** A mobile-first UI designed using a dark, high-contrast monochromatic color palette tailored for smartphones, tablets, and desktops.
-*   **Interactive Digital Menu:** An easily navigable menu section structured by categories (Hot Drinks, Cold Drinks, Pastries, and Meals). The layout pulls data dynamically from a local structured script file for frictionless adjustments.
-*   **Third-Party Delivery Integration:** Streamlined, high-visibility Call-to-Action (CTA) elements routing users directly to Silim Café’s existing Foodpanda storefront for ordering and fulfillment.
-*   **Location & Info Hub:** An embedded interactive Google Map, clear displays of operating hours, contact details, and redirection links to official Facebook and Instagram profiles.
-*   **Local SEO Optimization:** Structured meta-tagging and fast static site generation to rank high on search engines when locals look for study spots or coffee shops.
+You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
-### Out-of-Scope (Phase 1 Exclusions)
-*   Custom e-commerce cart, native checkout systems, or dedicated delivery tracking.
-*   Custom administrative login dashboards or remote backend database integrations.
-*   Seat reservation, table-booking matrices, or calendar scheduling components.
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
----
+## Learn More
 
-## 🛠️ Tech Stack
+To learn more about Next.js, take a look at the following resources:
 
-| Layer | Technology | Purpose & Justification |
-| :--- | :--- | :--- |
-| **Frontend Framework** | **Next.js** | Pre-renders application pages into static HTML (SSG), matching user demands for ultra-fast loading times on mobile devices and offering massive local SEO advantages. |
-| **Styling Engine** | **Tailwind CSS** | A utility-first CSS framework that facilitates swift building of custom, mobile-first designs without bulky stylesheet files. |
-| **Data Engine** | **Local JSON/JS** | Menu items, pricing tiers, and operating timelines are managed inside a dedicated code module, preventing maintenance overhead and keeping the site decoupled from a server. |
-| **Hosting & CI/CD** | **Vercel** | Out-of-the-box hosting architecture optimized for Next.js, delivering instant site loading via a global Content Delivery Network (CDN). |
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
----
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
