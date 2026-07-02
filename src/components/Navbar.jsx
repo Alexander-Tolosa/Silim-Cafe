@@ -1,9 +1,11 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 
 export default function Navbar() {
+  const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -29,8 +31,14 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Logo Link to Home */}
-        <Link 
-          href="/"
+        <a 
+          href={pathname === "/" ? "#" : "/"}
+          onClick={(e) => {
+            if (pathname === "/") {
+              e.preventDefault();
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }
+          }}
           className="flex items-center space-x-3 cursor-pointer group"
         >
           <div className="w-10 h-10 rounded-full overflow-hidden border border-gray-800 flex-shrink-0">
@@ -39,7 +47,7 @@ export default function Navbar() {
           <span className="text-sm font-bold text-white tracking-widest uppercase group-hover:text-gray-300 transition-colors duration-300">
             Silim Café
           </span>
-        </Link>
+        </a>
 
         {/* Desktop Navigation Link Routes */}
         <div className="hidden md:flex items-center space-x-8">

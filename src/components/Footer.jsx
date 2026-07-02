@@ -1,22 +1,34 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 
 export default function Footer() {
+  const pathname = usePathname();
+  
   return (
     <footer className="bg-black text-gray-500 border-t border-gray-950 py-12 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-center gap-8">
           
           {/* Logo & Brand */}
-          <Link href="/" className="flex items-center space-x-3 cursor-pointer group">
+          <a 
+            href={pathname === "/" ? "#" : "/"} 
+            onClick={(e) => {
+              if (pathname === "/") {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }
+            }}
+            className="flex items-center space-x-3 cursor-pointer group"
+          >
             <div className="w-8 h-8 rounded-full overflow-hidden border border-gray-900 flex-shrink-0">
               <img src="/images/logo.png" alt="Silim Café Logo" className="w-full h-full object-cover" />
             </div>
             <span className="text-sm font-bold text-white tracking-widest uppercase group-hover:text-gray-300 transition-colors duration-300">
               Silim Café
             </span>
-          </Link>
+          </a>
 
           {/* Quick Route Links */}
           <div className="flex flex-wrap justify-center gap-6 md:gap-8">
