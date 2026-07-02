@@ -28,7 +28,7 @@ By bypassing heavy backend infrastructure, this platform prioritizes blazing-fas
 | Layer | Technology | Purpose & Justification |
 | :--- | :--- | :--- |
 | **Frontend Framework** | **Next.js** | Pre-renders application pages into static HTML (SSG), matching user demands for ultra-fast loading times on mobile devices and offering massive local SEO advantages. |
-| **Styling Engine** | **Tailwind CSS** | A utility-first CSS framework that facilitates swift building of custom, mobile-first designs[cite: 1] without bulky stylesheet files. |
+| **Styling Engine** | **Tailwind CSS** | A utility-first CSS framework that facilitates swift building of custom, mobile-first designs without bulky stylesheet files. |
 | **Data Engine** | **Local JSON/JS** | Menu items, pricing tiers, and operating timelines are managed inside a dedicated code module, preventing maintenance overhead and keeping the site decoupled from a server. |
 | **Hosting & CI/CD** | **Vercel** | Out-of-the-box hosting architecture optimized for Next.js, delivering instant site loading via a global Content Delivery Network (CDN). |
 
