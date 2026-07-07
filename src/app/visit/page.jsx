@@ -1,12 +1,15 @@
 "use client";
 
+import Link from "next/link";
+
 export default function VisitPage() {
   return (
     <div className="pt-28 pb-20 bg-black min-h-screen">
-      <div className="max-w-4xl mx-auto px-6">
+      <div className="max-w-5xl mx-auto px-6">
+        
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <span className="text-[10px] font-bold uppercase tracking-widest text-gray-500">
+        <div className="text-center mb-12">
+          <span className="text-[10px] font-bold uppercase tracking-widest text-zinc-500">
             Location
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white mt-2 mb-4 uppercase tracking-wider">
@@ -15,30 +18,45 @@ export default function VisitPage() {
           <div className="h-0.5 w-12 bg-white mx-auto"></div>
         </div>
 
-        {/* Content grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start mb-16">
-          
-          {/* Details & Storefront Column */}
-          <div className="space-y-8">
-            {/* Storefront Photo */}
-            <div className="relative w-full aspect-[16/10] rounded overflow-hidden border border-gray-900 shadow-lg group bg-gray-950">
-              <img
-                src="/images/silim-storefront.png"
-                alt="Silim Café Storefront"
-                className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
-              />
-            </div>
+        {/* Large Storefront Banner - Placed Above all info */}
+        <div className="relative w-full aspect-[16/10] md:aspect-[16/10] rounded-2xl overflow-hidden border border-zinc-900 shadow-2xl group bg-zinc-950 mb-12 transform-gpu transition-all duration-500">
+          <img
+            src="/images/silim-storefront.png"
+            alt="Silim Café Storefront"
+            className="w-full h-full object-cover transition-transform duration-750 ease-out group-hover:scale-[1.02]"
+            loading="lazy"
+          />
+          {/* Subtle gradient overlay for depth */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
+        </div>
 
+        {/* Content grid below the storefront picture */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          
+          {/* Left Column: Details (Address, Hours, Contact) */}
+          <div className="lg:col-span-5 space-y-10 bg-zinc-950/30 border border-zinc-900/60 rounded-2xl p-8 sm:p-10 shadow-lg shadow-black/40">
+            
             {/* Address */}
             <div>
               <h3 className="text-xs font-bold uppercase tracking-widest text-white mb-3">
                 Address
               </h3>
-              <p className="text-sm text-gray-400 font-light leading-relaxed">
+              <p className="text-sm text-zinc-400 font-light leading-relaxed mb-4">
                 Ground Floor Block 9 Lot 18 Greengate Homes Phase 3,<br />
                 Malagasang 2-A, Imus, Cavite,<br />
                 Philippines
               </p>
+              <a 
+                href="https://maps.google.com/?q=Silim%20Caf%C3%A9,%2014.3758739,120.9252299" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center text-[10px] font-bold uppercase tracking-widest text-white hover:text-zinc-300 transition-colors duration-250 gap-1.5"
+              >
+                <span>Open in Google Maps</span>
+                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                </svg>
+              </a>
             </div>
 
             {/* Operating Hours */}
@@ -46,7 +64,7 @@ export default function VisitPage() {
               <h3 className="text-xs font-bold uppercase tracking-widest text-white mb-3">
                 Operating Hours
               </h3>
-              <ul className="space-y-2 text-sm text-gray-400 font-light">
+              <ul className="space-y-2.5 text-sm text-zinc-400 font-light">
                 <li className="flex justify-between max-w-xs">
                   <span>Monday - Friday</span>
                   <span className="text-white font-semibold">11AM - 11PM</span>
@@ -63,15 +81,15 @@ export default function VisitPage() {
               <h3 className="text-xs font-bold uppercase tracking-widest text-white mb-3">
                 Contact Info
               </h3>
-              <p className="text-sm text-gray-400 font-light mb-1">
+              <p className="text-sm text-zinc-400 font-light mb-1">
                 Email:{" "}
-                <a href="mailto:byrecorporation@gmail.com" className="text-white hover:underline">
+                <a href="mailto:byrecorporation@gmail.com" className="text-white hover:underline font-normal">
                   byrecorporation@gmail.com
                 </a>
               </p>
-              <p className="text-sm text-gray-400 font-light">
+              <p className="text-sm text-zinc-400 font-light">
                 Phone:{" "}
-                <a href="tel:09537830491" className="text-white hover:underline">
+                <a href="tel:09537830491" className="text-white hover:underline font-normal">
                   0953 783 0491
                 </a>
               </p>
@@ -82,7 +100,7 @@ export default function VisitPage() {
                   href="https://www.instagram.com/silimcafe?fbclid=IwY2xjawS5oRRleHRuA2FlbQIxMABicmlkETFzSGFBOGcxS1U2ZHdTRzVrc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHqKKAC1xisQopQVo833521-p7jhiTKoQPBq-4hfW4pAwGjeoIblJNP3OGrL9_aem_N-o2BOEEZdSUmCFbN0GgTA"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition-colors duration-300"
+                  className="text-zinc-400 hover:text-white transition-colors duration-300"
                   aria-label="Instagram"
                 >
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
@@ -95,7 +113,7 @@ export default function VisitPage() {
                   href="https://www.facebook.com/Silimcafe"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition-colors duration-300"
+                  className="text-zinc-400 hover:text-white transition-colors duration-300"
                   aria-label="Facebook"
                 >
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -106,7 +124,7 @@ export default function VisitPage() {
                   href="https://www.tiktok.com/@silimcafe?fbclid=IwY2xjawS5oTRleHRuA2FlbQIxMABicmlkETFzSGFBOGcxS1U2ZHdTRzVrc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHp3kYSOJpZglTEkJhtIi-G-ZuG_5wqy7ZUqF5thK_5Jk23GKkmH5adI_g21z_aem_ND792dHtOXW7QZYBLcasjg"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition-colors duration-300"
+                  className="text-zinc-400 hover:text-white transition-colors duration-300"
                   aria-label="TikTok"
                 >
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 448 512">
@@ -115,14 +133,12 @@ export default function VisitPage() {
                 </a>
               </div>
             </div>
+
           </div>
 
-          {/* Map Column (Map Only) */}
-          <div>
-            <h3 className="text-xs font-bold uppercase tracking-widest text-white mb-4">
-              On the Map
-            </h3>
-            <div className="relative w-full h-[480px] rounded overflow-hidden border border-gray-900 shadow-inner group">
+          {/* Right Column: Map */}
+          <div className="lg:col-span-7 h-full">
+            <div className="relative w-full h-[450px] lg:h-[490px] rounded-2xl overflow-hidden border border-zinc-900 shadow-xl group">
               <iframe
                 title="Silim Café Location Map"
                 src="https://maps.google.com/maps?q=Silim%20Caf%C3%A9,%2014.3758739,120.9252299&t=&z=17&ie=UTF8&iwloc=&output=embed"

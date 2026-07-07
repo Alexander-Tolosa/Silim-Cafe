@@ -1,6 +1,7 @@
 import { Plus_Jakarta_Sans } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Chatbot from "@/components/Chatbot";
 import "./globals.css";
 
 const jakarta = Plus_Jakarta_Sans({
@@ -30,6 +31,7 @@ export default function RootLayout({ children }) {
         <Navbar />
         <main className="flex-grow">{children}</main>
         <Footer />
+        <Chatbot />
       </body>
     </html>
   );
