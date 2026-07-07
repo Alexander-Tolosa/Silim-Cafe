@@ -108,7 +108,7 @@ export default function DeliveryCTA() {
             {/* Call to Action Trigger */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <a
-                href="https://www.foodpanda.com"
+                href="https://www.foodpanda.ph/restaurant/jjkp/silim-cafe-greengate-homes"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-8 py-4 bg-white hover:bg-gray-200 text-black font-bold text-xs uppercase tracking-widest rounded transition-all duration-300 shadow-md shadow-white/5 flex items-center justify-center group"

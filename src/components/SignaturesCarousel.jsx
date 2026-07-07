@@ -118,7 +118,7 @@ export default function SignaturesCarousel() {
           </p>
           <div className="flex flex-wrap justify-center items-center gap-3 transition-all duration-300">
             <span className="text-xs font-bold text-white border border-gray-800 px-3 py-1 rounded">
-              ${menuData[activeIndex].price.toFixed(2)}
+              ₱{menuData[activeIndex].price.toFixed(2)}
             </span>
             {menuData[activeIndex].ingredients && (
               <span className="text-[10px] text-gray-500 tracking-wider">

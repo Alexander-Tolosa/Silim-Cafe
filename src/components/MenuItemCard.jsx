@@ -1,7 +1,7 @@
 "use client";
 
 export default function MenuItemCard({ item }) {
-  const { name, description, price, image, tags, ingredients } = item;
+  const { name, description, price, image } = item;
 
   return (
     <div className="group relative bg-black hover:bg-gray-900/50 border border-gray-850 hover:border-gray-700 rounded overflow-hidden transition-all duration-500 flex flex-col h-full shadow-lg shadow-black/60">
@@ -17,20 +17,6 @@ export default function MenuItemCard({ item }) {
           className="w-full h-full object-cover grayscale group-hover:grayscale-0 contrast-[1.1] scale-100 group-hover:scale-105 transition-all duration-700 ease-out"
           loading="lazy"
         />
-
-        {/* Monochromatic Tags */}
-        {tags && tags.length > 0 && (
-          <div className="absolute top-4 left-4 z-20 flex flex-wrap gap-2">
-            {tags.map((tag, idx) => (
-              <span
-                key={idx}
-                className="px-2 py-1 text-[9px] font-bold uppercase tracking-widest bg-white text-black rounded"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-        )}
       </div>
 
       {/* Card Info */}
@@ -40,29 +26,13 @@ export default function MenuItemCard({ item }) {
             {name}
           </h3>
           <span className="text-sm font-bold text-white tracking-wider ml-4">
-            ${price.toFixed(2)}
+            ₱{price.toFixed(2)}
           </span>
         </div>
 
-        <p className="text-xs text-gray-400 font-light leading-relaxed mb-6 flex-grow">
+        <p className="text-xs text-gray-400 font-light leading-relaxed mb-2 flex-grow">
           {description}
         </p>
-
-        {/* Ingredients / Details Footer */}
-        {ingredients && ingredients.length > 0 && (
-          <div className="border-t border-gray-900 pt-4 mt-auto">
-            <div className="flex flex-wrap gap-1.5">
-              {ingredients.map((ing, idx) => (
-                <span
-                  key={idx}
-                  className="text-[9px] text-gray-400 bg-gray-950 border border-gray-900 px-2 py-0.5 rounded font-medium"
-                >
-                  {ing}
-                </span>
-              ))}
-            </div>
-          </div>
-        )}
       </div>
     </div>
   );

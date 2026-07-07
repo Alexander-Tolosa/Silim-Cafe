@@ -33,21 +33,23 @@ export default function MenuGrid() {
           </p>
         </div>
 
-        {/* Categories Tab Selector */}
-        <div className="flex flex-wrap justify-center gap-2 mb-16 max-w-3xl mx-auto">
-          {categories.map((category) => (
-            <button
-              key={category}
-              onClick={() => setActiveCategory(category)}
-              className={`px-5 py-2.5 rounded text-[10px] font-bold uppercase tracking-widest transition-all duration-300 cursor-pointer ${
-                activeCategory === category
-                  ? "bg-white text-black"
-                  : "bg-black hover:bg-gray-900 text-gray-400 hover:text-white border border-gray-800"
-              }`}
-            >
-              {category}
-            </button>
-          ))}
+        {/* Categories Tab Selector (Sticky) */}
+        <div className="sticky top-[72px] z-30 -mx-6 px-6 py-4 bg-black/90 backdrop-blur-md border-b border-gray-900/50 mb-16">
+          <div className="flex flex-wrap justify-center gap-2 max-w-3xl mx-auto">
+            {categories.map((category) => (
+              <button
+                key={category}
+                onClick={() => setActiveCategory(category)}
+                className={`px-5 py-2.5 rounded text-[10px] font-bold uppercase tracking-widest transition-all duration-300 cursor-pointer ${
+                  activeCategory === category
+                    ? "bg-white text-black"
+                    : "bg-black hover:bg-gray-900 text-gray-400 hover:text-white border border-gray-800"
+                }`}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
         </div>
 
         {/* Menu Items Grid */}
