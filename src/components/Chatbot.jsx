@@ -204,52 +204,71 @@ export default function Chatbot() {
             onClick={handleOpenToggle}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
-            className="w-14 h-14 rounded-full bg-zinc-950 text-white shadow-2xl flex items-center justify-center transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer relative border border-zinc-900 overflow-hidden"
+            className="w-20 h-20 rounded-full bg-zinc-950 text-zinc-400 hover:text-zinc-300 shadow-2xl flex items-center justify-center transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer relative border border-zinc-900 hover:border-zinc-800 overflow-hidden group"
             aria-label="Ask a question"
           >
             {unread && (
-              <span className="absolute top-0.5 right-0.5 w-3 h-3 bg-zinc-300 border border-zinc-950 rounded-full animate-pulse z-10" />
+              <span className="absolute top-1.5 right-1.5 w-3.5 h-3.5 bg-zinc-300 border border-zinc-950 rounded-full animate-pulse z-10" />
             )}
-            <img
-              src="/images/logo.png"
-              alt="Silim Café Logo"
-              className="w-full h-full object-cover rounded-full"
-            />
+            <svg className="w-10 h-10 text-zinc-400 group-hover:text-zinc-300 transition-colors" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+              {/* Robot Face/Body Shell */}
+              <rect x="5" y="8" width="14" height="10" rx="3" />
+              {/* Glowing Eyes */}
+              <circle cx="9" cy="13" r="1" fill="currentColor" />
+              <circle cx="15" cy="13" r="1" fill="currentColor" />
+              {/* Antennas */}
+              <path d="M12 5V8" />
+              <circle cx="12" cy="4" r="1" fill="currentColor" />
+              {/* Side screws */}
+              <path d="M5 13H3M21 13h-2" />
+              {/* Steam Coffee design on top */}
+              <path d="M9 2c0 .5-.5 1-.5 1M15 2c0 .5-.5 1-.5 1" />
+              {/* Mouth/Smile representing coffee cup base curve */}
+              <path d="M9 16c1 .5 3 .5 4 0" />
+              {/* Mug Handle! */}
+              <path d="M18 10c1.5 0 2.5 1 2.5 2.5S19.5 15 18 15" />
+            </svg>
           </button>
         </div>
       )}
 
       {/* Chat Window Panel */}
       {isOpen && (
-        <div className="w-[350px] sm:w-[380px] h-[480px] max-h-[calc(100vh-100px)] rounded-2xl bg-zinc-950/95 border border-zinc-900 shadow-2xl flex flex-col overflow-hidden animate-fade-in-up transform-gpu">
+        <div className="w-[380px] sm:w-[480px] h-[640px] max-h-[calc(100vh-100px)] rounded-2xl bg-zinc-950/95 border border-zinc-900 shadow-2xl flex flex-col overflow-hidden animate-fade-in-up transform-gpu">
           {/* Header */}
-          <div className="bg-zinc-900/40 px-5 py-4 border-b border-zinc-900/50 flex items-center justify-between">
-            <div className="flex items-center space-x-3">
-              <div className="w-8 h-8 rounded-full overflow-hidden border border-zinc-800 bg-zinc-950 flex-shrink-0 flex items-center justify-center">
-                <img
-                  src="/images/logo.png"
-                  alt="Silim Café Logo"
-                  className="w-full h-full object-cover"
-                />
+          <div className="bg-zinc-900/40 px-6 py-4.5 border-b border-zinc-900/50 flex items-center justify-between">
+            <div className="flex items-center space-x-3.5">
+              <div className="w-11 h-11 rounded-full border border-zinc-800 bg-zinc-950 flex-shrink-0 flex items-center justify-center text-zinc-400">
+                <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+                  <rect x="5" y="8" width="14" height="10" rx="3" />
+                  <circle cx="9" cy="13" r="1" fill="currentColor" />
+                  <circle cx="15" cy="13" r="1" fill="currentColor" />
+                  <path d="M12 5V8" />
+                  <circle cx="12" cy="4" r="1" fill="currentColor" />
+                  <path d="M5 13H3M21 13h-2" />
+                  <path d="M9 2c0 .5-.5 1-.5 1M15 2c0 .5-.5 1-.5 1" />
+                  <path d="M9 16c1 .5 3 .5 4 0" />
+                  <path d="M18 10c1.5 0 2.5 1 2.5 2.5S19.5 15 18 15" />
+                </svg>
               </div>
               <div>
-                <h4 className="text-xs font-bold text-white tracking-wider uppercase">
+                <h4 className="text-sm font-bold text-white tracking-wide uppercase">
                   Silim Assistant
                 </h4>
                 <div className="flex items-center space-x-1.5 mt-0.5">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                  <span className="text-[9px] text-zinc-500 font-semibold tracking-wider uppercase">
+                  <span className="text-[10px] text-zinc-500 font-semibold tracking-wider uppercase">
                     Ready to help
                   </span>
                 </div>
               </div>
             </div>
             
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center space-x-3">
               {messages.length > 1 && (
                 <button
                   onClick={resetChat}
-                  className="text-[10px] font-bold text-zinc-500 hover:text-zinc-300 uppercase tracking-widest px-2 py-1 rounded transition-colors"
+                  className="text-[11px] font-bold text-zinc-500 hover:text-zinc-300 uppercase tracking-widest px-2.5 py-1.5 rounded transition-colors"
                   title="Reset conversation"
                 >
                   Reset
@@ -257,7 +276,7 @@ export default function Chatbot() {
               )}
               <button
                 onClick={handleOpenToggle}
-                className="w-7 h-7 rounded-full flex items-center justify-center text-zinc-400 hover:text-white hover:bg-zinc-900 transition-all cursor-pointer text-lg leading-none"
+                className="w-8 h-8 rounded-full flex items-center justify-center text-zinc-400 hover:text-white hover:bg-zinc-900 transition-all cursor-pointer text-2xl leading-none"
                 aria-label="Close chat"
               >
                 &times;
@@ -266,7 +285,7 @@ export default function Chatbot() {
           </div>
 
           {/* Messages Area */}
-          <div className="flex-grow p-5 overflow-y-auto space-y-4 scrollbar-thin scrollbar-thumb-zinc-900 scrollbar-track-transparent">
+          <div className="flex-grow p-6 overflow-y-auto space-y-5 scrollbar-thin scrollbar-thumb-zinc-900 scrollbar-track-transparent">
             {messages.map((msg) => (
               <div
                 key={msg.id}
@@ -275,7 +294,7 @@ export default function Chatbot() {
                 }`}
               >
                 <div
-                  className={`p-3.5 rounded-2xl text-[12px] leading-relaxed shadow-sm ${
+                  className={`p-4 rounded-2xl text-[14px] leading-relaxed shadow-sm ${
                     msg.sender === "user"
                       ? "bg-white text-black rounded-tr-sm font-medium max-w-[85%]"
                       : "bg-zinc-900/60 border border-zinc-900 text-zinc-200 rounded-tl-sm max-w-[85%]"
@@ -289,10 +308,10 @@ export default function Chatbot() {
             {/* Bouncing Dot Typing Indicator */}
             {isTyping && (
               <div className="flex items-start">
-                <div className="p-3.5 rounded-2xl rounded-tl-sm bg-zinc-900/60 border border-zinc-900 flex space-x-1 items-center">
-                  <span className="w-1.5 h-1.5 rounded-full bg-zinc-400 animate-bounce" style={{ animationDelay: "0ms" }} />
-                  <span className="w-1.5 h-1.5 rounded-full bg-zinc-400 animate-bounce" style={{ animationDelay: "150ms" }} />
-                  <span className="w-1.5 h-1.5 rounded-full bg-zinc-400 animate-bounce" style={{ animationDelay: "300ms" }} />
+                <div className="p-4 rounded-2xl rounded-tl-sm bg-zinc-900/60 border border-zinc-900 flex space-x-1.5 items-center">
+                  <span className="w-2 h-2 rounded-full bg-zinc-400 animate-bounce" style={{ animationDelay: "0ms" }} />
+                  <span className="w-2 h-2 rounded-full bg-zinc-400 animate-bounce" style={{ animationDelay: "150ms" }} />
+                  <span className="w-2 h-2 rounded-full bg-zinc-400 animate-bounce" style={{ animationDelay: "300ms" }} />
                 </div>
               </div>
             )}
@@ -300,11 +319,11 @@ export default function Chatbot() {
           </div>
 
           {/* Quick-Reply Options Footer */}
-          <div className="p-4 bg-zinc-900/20 border-t border-zinc-900/50 flex flex-col gap-2">
-            <span className="text-[9px] font-bold text-zinc-500 uppercase tracking-widest px-1">
+          <div className="p-5 bg-zinc-900/20 border-t border-zinc-900/50 flex flex-col gap-3">
+            <span className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest px-1">
               Select a Question:
             </span>
-            <div className="grid grid-cols-2 gap-2">
+            <div className="grid grid-cols-2 gap-3.5">
               {QUESTIONS.map((q) => {
                 const isSelected = messages.some((m) => m.text === q.question);
                 return (
@@ -312,7 +331,7 @@ export default function Chatbot() {
                     key={q.id}
                     onClick={() => handleSelectQuestion(q)}
                     disabled={isTyping}
-                    className={`px-3 py-2 rounded-xl text-[11px] leading-tight text-left transition-all border font-light tracking-wide flex items-center justify-between ${
+                    className={`px-4 py-2.5 rounded-xl text-xs sm:text-[13px] leading-tight text-left transition-all border font-light tracking-wide flex items-center justify-between ${
                       isSelected
                         ? "border-zinc-800 bg-zinc-900/30 text-zinc-400 cursor-not-allowed"
                         : "border-zinc-800/80 bg-zinc-900/10 text-zinc-300 hover:text-white hover:border-zinc-700 hover:bg-zinc-900/50 cursor-pointer"

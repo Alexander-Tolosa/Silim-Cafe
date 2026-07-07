@@ -82,11 +82,11 @@ export default function CustomerLove() {
     }
     if (offset === -1) {
       // Left Card (Preview)
-      return "scale-85 md:scale-90 z-20 opacity-30 -translate-x-32 md:-translate-x-72 grayscale blur-[1px] cursor-pointer pointer-events-auto border-gray-900";
+      return "scale-85 md:scale-90 z-20 opacity-20 -translate-x-36 md:-translate-x-96 grayscale blur-[1px] cursor-pointer pointer-events-auto border-gray-900";
     }
     if (offset === 1) {
       // Right Card (Preview)
-      return "scale-85 md:scale-90 z-20 opacity-30 translate-x-32 md:translate-x-72 grayscale blur-[1px] cursor-pointer pointer-events-auto border-gray-900";
+      return "scale-85 md:scale-90 z-20 opacity-20 translate-x-36 md:translate-x-96 grayscale blur-[1px] cursor-pointer pointer-events-auto border-gray-900";
     }
     // Hidden Cards
     return "scale-75 z-10 opacity-0 pointer-events-none translate-x-0";
@@ -119,10 +119,10 @@ export default function CustomerLove() {
         </div>
 
         {/* 3D Perspective Slider Carousel */}
-        <div className="relative w-full h-[320px] md:h-[380px] flex items-center justify-center overflow-hidden mb-8">
+        <div className="relative w-full h-[380px] md:h-[450px] flex items-center justify-center overflow-hidden mb-8">
 
           {/* Carousel Frame Wrapper */}
-          <div className="relative w-full max-w-md h-full flex items-center justify-center">
+          <div className="relative w-full max-w-xl h-full flex items-center justify-center">
             {reviews.map((review, idx) => {
               const offset = getOffset(idx);
               return (
@@ -132,28 +132,28 @@ export default function CustomerLove() {
                     if (offset === -1) handlePrev();
                     if (offset === 1) handleNext();
                   }}
-                  className={`absolute w-[280px] md:w-[320px] h-64 bg-white text-black p-6 rounded flex flex-col justify-between transition-all duration-500 ease-in-out border ${getItemClass(idx)}`}
+                  className={`absolute w-[310px] md:w-[420px] h-[280px] md:h-[320px] bg-white text-black p-8 rounded-2xl flex flex-col justify-between transition-all duration-500 ease-in-out border ${getItemClass(idx)}`}
                 >
                   <div>
                     {/* 5 Monochromatic Rating Stars */}
-                    <div className="flex space-x-0.5 text-xs text-gray-900">
+                    <div className="flex space-x-0.5 text-sm text-gray-900">
                       {Array.from({ length: review.stars }).map((_, idx) => (
                         <span key={idx}>★</span>
                       ))}
                     </div>
 
                     {/* Review Text */}
-                    <p className="text-xs text-gray-700 leading-relaxed font-light mt-4">
+                    <p className="text-sm sm:text-base text-gray-800 leading-relaxed font-normal mt-4">
                       "{review.text}"
                     </p>
                   </div>
 
                   {/* Profile Details footer */}
                   <div className="flex items-center mt-6 pt-4 border-t border-gray-100">
-                    <div className="w-9 h-9 rounded-full bg-black text-white flex items-center justify-center font-bold text-[10px] tracking-wide uppercase flex-shrink-0">
+                    <div className="w-11 h-11 rounded-full bg-black text-white flex items-center justify-center font-bold text-xs tracking-wide uppercase flex-shrink-0">
                       {review.initials}
                     </div>
-                    <span className="text-xs font-bold text-black ml-3">
+                    <span className="text-sm font-bold text-black ml-3.5">
                       {review.name}
                     </span>
                   </div>
