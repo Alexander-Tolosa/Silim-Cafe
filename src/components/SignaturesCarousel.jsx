@@ -5,18 +5,22 @@ import { menuData } from "@/data/menuData";
 
 export default function SignaturesCarousel() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+
+  // Filter to show only items marked as popular: true
+  const popularItems = menuData.filter((item) => item.popular === true);
 
   const handlePrev = () => {
-    setActiveIndex((prev) => (prev - 1 + menuData.length) % menuData.length);
+    setActiveIndex((prev) => (prev - 1 + popularItems.length) % popularItems.length);
   };
 
   const handleNext = () => {
-    setActiveIndex((prev) => (prev + 1) % menuData.length);
+    setActiveIndex((prev) => (prev + 1) % popularItems.length);
   };
 
   const getOffset = (idx) => {
     let diff = idx - activeIndex;
-    const len = menuData.length;
+    const len = popularItems.length;
     if (diff < -len / 2) diff += len;
     if (diff > len / 2) diff -= len;
     return diff;
@@ -47,21 +51,25 @@ export default function SignaturesCarousel() {
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-12">
           <span className="text-[10px] font-bold uppercase tracking-widest text-gray-500">
-            Signatures
+            Populars
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white mt-2 mb-4 uppercase tracking-wider">
-            Our Signatures
+            Our Populars
           </h2>
           <div className="h-0.5 w-12 bg-white mx-auto"></div>
         </div>
 
         {/* 3D Perspective Slider Carousel */}
-        <div className="relative w-full h-[300px] md:h-[380px] flex items-center justify-center overflow-hidden mb-8">
+        <div 
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+          className="relative w-full h-[300px] md:h-[380px] flex items-center justify-center overflow-hidden mb-8"
+        >
           {/* Left Arrow Button */}
           <button
             onClick={handlePrev}
             className="absolute left-2 md:left-12 z-40 w-10 h-10 rounded-full border border-gray-800 bg-black/55 hover:bg-white hover:text-black text-white flex items-center justify-center transition-all duration-300 cursor-pointer"
-            aria-label="Previous signature"
+            aria-label="Previous popular item"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
@@ -70,7 +78,7 @@ export default function SignaturesCarousel() {
 
           {/* Slider Frame Wrapper */}
           <div className="relative w-full max-w-md h-full flex items-center justify-center">
-            {menuData.map((item, idx) => {
+            {popularItems.map((item, idx) => {
               const offset = getOffset(idx);
               return (
                 <div
@@ -100,7 +108,7 @@ export default function SignaturesCarousel() {
           <button
             onClick={handleNext}
             className="absolute right-2 md:right-12 z-40 w-10 h-10 rounded-full border border-gray-800 bg-black/55 hover:bg-white hover:text-black text-white flex items-center justify-center transition-all duration-300 cursor-pointer"
-            aria-label="Next signature"
+            aria-label="Next popular item"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
@@ -108,21 +116,22 @@ export default function SignaturesCarousel() {
           </button>
         </div>
 
-        {/* Selected Signature Item Details */}
-        <div className="text-center max-w-xl mx-auto min-h-[120px] px-4 flex flex-col justify-center">
+        {/* Selected Signature Item Details with hover transition */}
+        <div 
+          className={`text-center max-w-xl mx-auto min-h-[120px] px-4 flex flex-col justify-center transition-all duration-500 ease-out ${
+            isHovered ? "opacity-100 translate-y-0" : "opacity-100 md:opacity-0 md:translate-y-4"
+          }`}
+        >
           <h3 className="text-xl sm:text-2xl font-extrabold text-white uppercase tracking-wider mb-2 transition-all duration-300">
-            {menuData[activeIndex].name}
+            {popularItems[activeIndex]?.name}
           </h3>
           <p className="text-xs sm:text-sm text-gray-400 font-light leading-relaxed mb-4 transition-all duration-300">
-            {menuData[activeIndex].description}
+            {popularItems[activeIndex]?.description}
           </p>
           <div className="flex flex-wrap justify-center items-center gap-3 transition-all duration-300">
-            <span className="text-xs font-bold text-white border border-gray-800 px-3 py-1 rounded">
-              ₱{menuData[activeIndex].price.toFixed(2)}
-            </span>
-            {menuData[activeIndex].ingredients && (
+            {popularItems[activeIndex]?.ingredients && (
               <span className="text-[10px] text-gray-500 tracking-wider">
-                {menuData[activeIndex].ingredients.join("  •  ")}
+                {popularItems[activeIndex]?.ingredients.join("  •  ")}
               </span>
             )}
           </div>

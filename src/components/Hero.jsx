@@ -21,25 +21,18 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center mt-12">
-        <div className="inline-flex items-center space-x-2 px-3 py-1.5 rounded bg-gray-900 border border-gray-800 mb-6 animate-fade-in-down">
-          <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span>
-          <span className="text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-gray-300">
-            Premium Study Spot & Workspace
-          </span>
-        </div>
-
         <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold text-white leading-tight tracking-tight mb-6 animate-fade-in-up uppercase">
           Silim Café
         </h1>
 
         <p className="text-sm sm:text-base md:text-lg text-gray-400 font-light leading-relaxed max-w-xl mx-auto mb-8 animate-fade-in-up delay-200">
-          A minimalist sanctuary engineered for focus. Premium specialty coffee, silent study spaces, and high-speed fiber for students and late-night builders.
+          Kape at kwento sa bawat takipsilim.
         </p>
 
-        {/* Minimalist Facebook and Instagram icons */}
+        {/* Minimalist Facebook, Instagram and TikTok icons */}
         <div className="flex justify-center space-x-6 mb-10 animate-fade-in-up delay-200">
           <a
-            href="https://facebook.com"
+            href="https://www.facebook.com/Silimcafe"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-400 hover:text-white transition-colors duration-300"
@@ -50,7 +43,7 @@ export default function Hero() {
             </svg>
           </a>
           <a
-            href="https://instagram.com"
+            href="https://www.instagram.com/silimcafe?fbclid=IwY2xjawS5oRRleHRuA2FlbQIxMABicmlkETFzSGFBOGcxS1U2ZHdTRzVrc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHqKKAC1xisQopQVo833521-p7jhiTKoQPBq-4hfW4pAwGjeoIblJNP3OGrL9_aem_N-o2BOEEZdSUmCFbN0GgTA"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-400 hover:text-white transition-colors duration-300"
@@ -60,6 +53,17 @@ export default function Hero() {
               <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
               <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
               <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+            </svg>
+          </a>
+          <a
+            href="https://www.tiktok.com/@silimcafe?fbclid=IwY2xjawS5oTRleHRuA2FlbQIxMABicmlkETFzSGFBOGcxS1U2ZHdTRzVrc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHp3kYSOJpZglTEkJhtIi-G-ZuG_5wqy7ZUqF5thK_5Jk23GKkmH5adI_g21z_aem_ND792dHtOXW7QZYBLcasjg"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-400 hover:text-white transition-colors duration-300"
+            aria-label="TikTok"
+          >
+            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 448 512">
+              <path d="M448 209.91a210.06 210.06 0 0 1-122.77-39.25V349.38A162.55 162.55 0 1 1 185 188.31V278.2a72.82 72.82 0 1 0 38.66 99.8V0h89.89a101.42 101.42 0 0 0 14.65 56.88 101.9 101.9 0 0 0 46 38.67 102.3 102.3 0 0 0 73.81 4.64Z" />
             </svg>
           </a>
         </div>

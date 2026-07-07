@@ -9,58 +9,44 @@ export default function CustomerLove() {
     {
       id: 1,
       stars: 5,
-      text: "Every sip of the Dusk Spanish Latte feels like a warm hug. This coffee shop has made my late-night study blocks much brighter.",
-      initials: "SK",
-      name: "Samantha K.",
+      text: "Highly recommended coffee shop. Great blends and staff. Cozy and warm atmosphere.",
+      initials: "JML",
+      name: "John Mark Lacanlale",
     },
     {
       id: 2,
       stars: 5,
-      text: "An absolute sanctuary. Incredibly fast fiber connection, silent desks, and top-tier cold brew served past midnight. A developer's dream.",
-      initials: "JR",
-      name: "John R.",
+      text: "Love the ambiance and the staff are friendly and approachable. You can discuss your preference of your coffee. They accept gcash!",
+      initials: "ST",
+      name: "Stan",
     },
     {
       id: 3,
       stars: 5,
-      text: "Minimalist, moody, and highly focused. The flat white is dialed in perfectly, and the truffle honey grilled cheese is legendary.",
-      initials: "AM",
-      name: "ABC M.",
+      text: "Good service and friendly staff! Badly wanna drink all-day their Ice-blended Matcha also I would recommend their coffee! Just Hoping for more snacks & kid-friendly foods! Praying for your business succession! 🙏🙌",
+      initials: "RR",
+      name: "Rex Ramos",
     },
     {
       id: 4,
       stars: 5,
-      text: "Silim Café has nailed the workspace aesthetic. It is quiet, premium, and welcoming. Highly recommended for students on a grind.",
-      initials: "IT",
-      name: "Ina Tiongson",
+      text: "I tried this place since its been a hell of busy weeks for me, i only tried the matcha frappe, it was great. The atmosphere is quiet when i visited there, talagang hinintay kong magtakipsilim after i went home and that was a fantastic sight.",
+      initials: "AG",
+      name: "Ashley Gomez",
     },
     {
       id: 5,
       stars: 5,
-      text: "The ceremonial matcha latte is outstanding. It is so hard to find a quiet coffee shop open late with consistent quality like this.",
-      initials: "DL",
-      name: "Daniel L.",
+      text: "I like the Matcha Latte not too tangy and just the right amount of sweetness. The service was fast, friendly and professional. We highly recommend you try it!",
+      initials: "RV",
+      name: "Ritchelle Villagracia",
     },
     {
       id: 6,
       stars: 5,
-      text: "The cinnamon scroll paired with a hot flat white is my go-to combo. Absolute perfection for early mornings or late-night revision.",
-      initials: "LT",
-      name: "Liam T.",
-    },
-    {
-      id: 7,
-      stars: 5,
-      text: "Extremely responsive staff and a silent workspace. I can finally focus on writing my research paper without distractions.",
-      initials: "BV",
-      name: "Beatrice V.",
-    },
-    {
-      id: 8,
-      stars: 5,
-      text: "Top-tier specialty coffee. The dark, moody atmosphere sets the perfect tone for long coding sessions and product design blocks.",
-      initials: "MC",
-      name: "Marcus C.",
+      text: "Nice place. Nasa dulo ng street and medyo tago so it's less crowded. Food and service is nice. Simple atmosphere.",
+      initials: "LR",
+      name: "Lilac Ruiz",
     },
   ];
 
@@ -106,14 +92,14 @@ export default function CustomerLove() {
     return "scale-75 z-10 opacity-0 pointer-events-none translate-x-0";
   };
 
-  const marqueeText = "10K+ cups brewed • 4.9/5 star average rating • Designed for focus • Locally sourced beans • Fast fiber study spots • 2000+ happy coders • ";
+  const marqueeText = "Silim Cafe    •    4.8/5 star average rating    •    Designed for focus    •    Locally sourced beans    •    Coffee Deals    •    50+ Happy Customers    •    ";
 
   return (
     <section className="bg-concrete-wall py-20 relative overflow-hidden border-t border-gray-950">
 
       {/* Infinite Scrolling Ticker Banner */}
       <div className="w-full bg-zinc-900 border-t border-b border-zinc-800 py-5 overflow-hidden flex whitespace-nowrap mb-16 relative z-10">
-        <div className="flex animate-marquee text-xs sm:text-sm tracking-[0.2em] font-semibold text-gray-300 uppercase select-none">
+        <div className="flex animate-marquee text-xs sm:text-sm tracking-[0.2em] font-semibold text-gray-300 uppercase select-none whitespace-pre">
           <span>{marqueeText.repeat(8)}</span>
           <span>{marqueeText.repeat(8)}</span>
         </div>

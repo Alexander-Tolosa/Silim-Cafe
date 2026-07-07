@@ -76,6 +76,15 @@ body {
   overflow-x: hidden;
 }
 
+/* Hide scrollbar for horizontal category nav */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 /* Animation Delays */
 .delay-100 {
   animation-delay: 100ms;

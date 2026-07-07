@@ -23,15 +23,14 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-black/80 backdrop-blur-md border-b border-gray-900 py-4 shadow-lg shadow-black/40"
-          : "bg-transparent py-6 border-b border-transparent"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
+        ? "bg-black/80 backdrop-blur-md border-b border-gray-900 py-4 shadow-lg shadow-black/40"
+        : "bg-transparent py-6 border-b border-transparent"
+        }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Logo Link to Home */}
-        <a 
+        <a
           href={pathname === "/" ? "#" : "/"}
           onClick={(e) => {
             if (pathname === "/") {
@@ -61,12 +60,14 @@ export default function Navbar() {
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white group-hover:w-full transition-all duration-300"></span>
             </Link>
           ))}
-          <Link
-            href="/menu"
+          <a
+            href="https://www.foodpanda.ph/restaurant/jjkp/silim-cafe-greengate-homes"
+            target="_blank"
+            rel="noopener noreferrer"
             className="px-5 py-2.5 text-xs font-bold uppercase tracking-widest bg-white hover:bg-gray-200 text-black rounded transition-all duration-300 shadow-md shadow-white/5"
           >
             Order Now
-          </Link>
+          </a>
         </div>
 
         {/* Mobile Menu Button */}
@@ -89,9 +90,8 @@ export default function Navbar() {
 
       {/* Mobile Drawer Menu */}
       <div
-        className={`md:hidden absolute top-full left-0 right-0 bg-black/95 backdrop-blur-lg border-b border-gray-900 transition-all duration-300 overflow-hidden ${
-          isMobileMenuOpen ? "max-h-screen opacity-100 py-6" : "max-h-0 opacity-0 py-0"
-        }`}
+        className={`md:hidden absolute top-full left-0 right-0 bg-black/95 backdrop-blur-lg border-b border-gray-900 transition-all duration-300 overflow-hidden ${isMobileMenuOpen ? "max-h-screen opacity-100 py-6" : "max-h-0 opacity-0 py-0"
+          }`}
       >
         <div className="flex flex-col space-y-4 px-6">
           {["menu", "delivery", "visit"].map((item) => (
@@ -104,13 +104,15 @@ export default function Navbar() {
               {item}
             </Link>
           ))}
-          <Link
-            href="/menu"
+          <a
+            href="https://www.foodpanda.ph/restaurant/jjkp/silim-cafe-greengate-homes"
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={() => setIsMobileMenuOpen(false)}
             className="w-full text-center px-5 py-3 text-xs font-bold uppercase tracking-widest bg-white hover:bg-gray-200 text-black rounded transition-all duration-300"
           >
             Order Now
-          </Link>
+          </a>
         </div>
       </div>
     </nav>
