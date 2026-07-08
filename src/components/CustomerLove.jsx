@@ -132,7 +132,7 @@ export default function CustomerLove() {
                     if (offset === -1) handlePrev();
                     if (offset === 1) handleNext();
                   }}
-                  className={`absolute w-[310px] md:w-[420px] h-[280px] md:h-[320px] bg-white text-black p-8 rounded-2xl flex flex-col justify-between transition-all duration-500 ease-in-out border ${getItemClass(idx)}`}
+                  className={`absolute w-[310px] md:w-[420px] h-[340px] md:h-[320px] bg-white text-black p-6 md:p-8 rounded-2xl flex flex-col justify-between transition-all duration-500 ease-in-out border ${getItemClass(idx)}`}
                 >
                   <div>
                     {/* 5 Monochromatic Rating Stars */}
@@ -143,13 +143,13 @@ export default function CustomerLove() {
                     </div>
 
                     {/* Review Text */}
-                    <p className="text-sm sm:text-base text-gray-800 leading-relaxed font-normal mt-4">
+                    <p className="text-sm sm:text-base text-gray-800 leading-relaxed font-normal mt-3 md:mt-4">
                       "{review.text}"
                     </p>
                   </div>
 
                   {/* Profile Details footer */}
-                  <div className="flex items-center mt-6 pt-4 border-t border-gray-100">
+                  <div className="flex items-center mt-4 md:mt-6 pt-3 md:pt-4 border-t border-gray-100">
                     <div className="w-11 h-11 rounded-full bg-black text-white flex items-center justify-center font-bold text-xs tracking-wide uppercase flex-shrink-0">
                       {review.initials}
                     </div>

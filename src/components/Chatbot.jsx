@@ -40,7 +40,6 @@ export default function Chatbot() {
     }
   ]);
   const [isTyping, setIsTyping] = useState(false);
-  const [unread, setUnread] = useState(true);
   const messagesEndRef = useRef(null);
 
   // Tooltip hover states
@@ -77,7 +76,6 @@ export default function Chatbot() {
 
   const handleOpenToggle = () => {
     setIsOpen(!isOpen);
-    setUnread(false);
     setIsHovered(false);
   };
 
@@ -179,7 +177,7 @@ export default function Chatbot() {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 font-sans flex flex-col items-end">
+    <div className="fixed bottom-4 right-4 left-4 sm:left-auto sm:bottom-6 sm:right-6 z-50 font-sans flex flex-col items-end">
       {/* Floating Chat Bubble Button */}
       {!isOpen && (
         <div className="relative flex items-center justify-end">
@@ -204,12 +202,10 @@ export default function Chatbot() {
             onClick={handleOpenToggle}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
-            className="w-20 h-20 rounded-full bg-zinc-950 text-zinc-400 hover:text-zinc-300 shadow-2xl flex items-center justify-center transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer relative border border-zinc-900 hover:border-zinc-800 overflow-hidden group"
+            className="w-20 h-20 rounded-full bg-zinc-950 text-zinc-400 hover:text-zinc-300 shadow-2xl flex items-center justify-center transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer relative border border-zinc-900 hover:border-zinc-800 group"
             aria-label="Ask a question"
           >
-            {unread && (
-              <span className="absolute top-1.5 right-1.5 w-3.5 h-3.5 bg-zinc-300 border border-zinc-950 rounded-full animate-pulse z-10" />
-            )}
+            <span className="absolute top-1.5 right-1.5 w-3.5 h-3.5 bg-emerald-500 border border-zinc-950 rounded-full animate-pulse z-10" />
             <svg className="w-10 h-10 text-zinc-400 group-hover:text-zinc-300 transition-colors" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
               {/* Robot Face/Body Shell */}
               <rect x="5" y="8" width="14" height="10" rx="3" />
@@ -234,7 +230,7 @@ export default function Chatbot() {
 
       {/* Chat Window Panel */}
       {isOpen && (
-        <div className="w-[380px] sm:w-[480px] h-[640px] max-h-[calc(100vh-100px)] rounded-2xl bg-zinc-950/95 border border-zinc-900 shadow-2xl flex flex-col overflow-hidden animate-fade-in-up transform-gpu">
+        <div className="w-full sm:w-[480px] h-[640px] max-h-[calc(100vh-100px)] rounded-2xl bg-zinc-950/95 border border-zinc-900 shadow-2xl flex flex-col overflow-hidden animate-fade-in-up transform-gpu">
           {/* Header */}
           <div className="bg-zinc-900/40 px-6 py-4.5 border-b border-zinc-900/50 flex items-center justify-between">
             <div className="flex items-center space-x-3.5">
